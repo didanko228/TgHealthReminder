@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id 'application'
+
+    id 'com.gradleup.shadow' version "9.2.2"
 }
 
 java {
@@ -9,23 +11,32 @@ java {
 }
 
 application {
-    mainClass = 'com.didanko228.tghealthreminder.TgHealthReminder'
+    mainClass = 'com.didanko228.tghealthreminder.Main'
 }
 
 jar {
     manifest {
         attributes(
-                'Main-Class': 'com.didanko228.tghealthreminder.TgHealthReminder'
+                'Main-Class': 'com.didanko228.tghealthreminder.Main'
         )
     }
 }
-
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    runtimeOnly "ch.qos.logback:logback-classic:${logback_classic_version}"
 
+    implementation "org.telegram:telegrambots-longpolling:${project.telegrambots_api_version}"
+    implementation "org.telegram:telegrambots-client:${project.telegrambots_api_version}"
+    implementation "io.github.cdimascio:java-dotenv:${project.java_dotenv_version}"
+}
+
+tasks.named('shadowJar') {
+    archiveBaseName.set(project.name)
+    archiveVersion.set(project.version)
+    mergeServiceFiles()
 }
 
