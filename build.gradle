@@ -32,6 +32,7 @@ dependencies {
     implementation "org.telegram:telegrambots-longpolling:${project.telegrambots_api_version}"
     implementation "org.telegram:telegrambots-client:${project.telegrambots_api_version}"
     implementation "io.github.cdimascio:java-dotenv:${project.java_dotenv_version}"
+    implementation "com.google.code.gson:gson:${gson_version}"
 }
 
 tasks.named('shadowJar') {

@@ -2,6 +2,7 @@ package com.didanko228.tghealthreminder;
 
 import com.didanko228.tghealthreminder.utils.Config;
 import com.didanko228.tghealthreminder.utils.Logger;
+import com.didanko228.tghealthreminder.utils.TranslationManager;
 import org.telegram.telegrambots.longpolling.TelegramBotsLongPollingApplication;
 
 public class Main {
@@ -11,6 +12,7 @@ public class Main {
     static void main() {
         try (TelegramBotsLongPollingApplication botsApplication = new TelegramBotsLongPollingApplication()) {
             botsApplication.registerBot(Config.BOT_TOKEN, new TgHealthReminder(Config.BOT_TOKEN));
+            TranslationManager.loadTranslations();
 
             Logger.info("Started!");
 
