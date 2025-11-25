@@ -12,33 +12,21 @@ public class TextHandler {
     public static void handle(TelegramClient telegramClient, Message msg) {
         String text = msg.getText();
         long chat_id = msg.getChatId();
+        int msg_id = msg.getMessageId();
 
-        if (text.equals("ru")) {
+        if (text.equals("/start")) {
             SendMessage message = SendMessage
                     .builder()
                     .chatId(chat_id)
-                    .text(TranslationManager.translate("ru_ru", "ru_ru"))
-                    .replyMarkup(Keyboards.getRuKeyboard())
+                    .text(TranslationManager.translate(TranslationManager.DEFAULT_LANGUAGE, "msg.start"))
+                    .replyToMessageId(msg_id)
+                    .replyMarkup(Keyboards.getStartMenu(chat_id))
                     .build();
 
             try {
                 telegramClient.execute(message);
             } catch (TelegramApiException e) {
-                Logger.error("Error sending message", e);
-            }
-        }
-        else if (text.equals("en")) {
-            SendMessage message = SendMessage
-                    .builder()
-                    .chatId(chat_id)
-                    .text(TranslationManager.translate("en_us", "en_us"))
-                    .replyMarkup(Keyboards.getEnKeyboard())
-                    .build();
-
-            try {
-                telegramClient.execute(message);
-            } catch (TelegramApiException e) {
-                Logger.error("Error sending message", e);
+                Logger.error("Error sending msg", e);
             }
         }
     }

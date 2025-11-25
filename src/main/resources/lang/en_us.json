@@ -1,3 +1,10 @@
 {
-  "en_us": "\uD83C\uDDFA\uD83C\uDDF8 English"
+  "en_us": "\uD83C\uDDFA\uD83C\uDDF8 English",
+
+  "msg.start": "👋 Welcome to the bot for doctor appointments and medication reminders.\n⬇️ Choose an action:",
+  "button.start.appointments": "📅 Doctor Appointments",
+  "button.start.med_reminders": "💊 Medication Reminders",
+  "button.start.visits": "📝 My Visits",
+  "button.start.settings": "⚙\uFE0F Settings",
+  "button.start.admin": "🔝 Admin Panel"
 }

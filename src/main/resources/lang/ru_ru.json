@@ -1,3 +1,10 @@
 {
-  "ru_ru": "\uD83C\uDDF7\uD83C\uDDFA Русский"
+  "ru_ru": "\uD83C\uDDF7\uD83C\uDDFA Русский",
+
+  "msg.start": "\uD83D\uDC4B Добро пожаловать в бот для напоминаний о записи к врачу и приёме лекарств.\n⬇\uFE0F Выберите действие:",
+  "button.start.appointments": "\uD83D\uDCC5 Запись к врачу",
+  "button.start.med_reminders": "\uD83D\uDC8A Напоминания о лекарствах",
+  "button.start.visits": "\uD83D\uDCDD Мои приёмы",
+  "button.start.settings": "⚙\uFE0F Настройки",
+  "button.start.admin": "\uD83D\uDD1D Админка"
 }
