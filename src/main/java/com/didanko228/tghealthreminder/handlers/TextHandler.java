@@ -18,10 +18,8 @@ public class TextHandler {
         long chat_id = msg.getChatId();
         long user_id = msg.getChat().getId();
         int msg_id = msg.getMessageId();
-        int date = msg.getDate();
 
-
-        Logger.info("[" + Date.getDateString(date * 1000L) + " - " + Date.getDateString() + "] User " + name + " " + chat_id + "/" + user_id + " send(" + msg_id + " - u.menu" + "): " + text);
+        Logger.info("[" + Date.getDateString() + "] User " + name + " " + chat_id + "/" + user_id + " send(" + msg_id + " - u.menu" + "): " + text);
 
         if (text.equals("/start")) {
             Document user = MongoDriver.getOrCreateUser(user_id);
