@@ -32,7 +32,9 @@ dependencies {
     implementation "org.telegram:telegrambots-longpolling:${project.telegrambots_api_version}"
     implementation "org.telegram:telegrambots-client:${project.telegrambots_api_version}"
     implementation "io.github.cdimascio:java-dotenv:${project.java_dotenv_version}"
-    implementation "com.google.code.gson:gson:${gson_version}"
+    implementation "com.google.code.gson:gson:${project.gson_version}"
+    implementation(platform("org.mongodb:mongodb-driver-bom:${project.mongodb_driver_bom_version}"))
+    implementation "org.mongodb:mongodb-driver-sync"
 }
 
 tasks.named('shadowJar') {

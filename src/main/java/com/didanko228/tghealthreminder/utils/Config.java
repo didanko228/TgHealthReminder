@@ -16,4 +16,6 @@ public class Config {
     public static Set<Long> ADMINS = Arrays.stream(Objects.requireNonNull(adminValue).split(","))
             .map(Long::parseLong)
             .collect(Collectors.toSet());
+
+    public static String MONGODB_URL = dotenv.get("MONGODB_URL");
 }
